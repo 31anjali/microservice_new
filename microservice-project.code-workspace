@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../microservice-project"
+		},
+		{
+			"name": "microservice_new",
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
