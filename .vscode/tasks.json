@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java (buildArtifact)",
+			"targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+			"elements": [
+				"${compileOutput:discovery-server}",
+				"${dependencies:discovery-server}",
+				"${compileOutput:inventory-service}",
+				"${dependencies:inventory-service}",
+				"${compileOutput:microservice_new}",
+				"${dependencies:microservice_new}",
+				"${compileOutput:order-service}",
+				"${dependencies:order-service}",
+				"${compileOutput:product-service}",
+				"${dependencies:product-service}"
+			],
+			"problemMatcher": [],
+			"label": "java (buildArtifact): microservice_new",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

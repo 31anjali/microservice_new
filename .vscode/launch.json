@@ -4,6 +4,14 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+        {
+            "type": "java",
+            "name": "DiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.tech.discoveryserver.DiscoveryServerApplication",
+            "projectName": "discovery-server"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -12,10 +20,21 @@
         },
         {
             "type": "java",
-            "name": "InventoryServiceApplication",
+            "name": "Inventory-Instance-1",
             "request": "launch",
             "mainClass": "com.tech.inventory_service.InventoryServiceApplication",
-            "projectName": "inventory-service"
+            "projectName": "inventory-service",
+            "vmArgs": "-Dserver.port=0",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Inventory-Instance-2",
+            "request": "launch",
+            "mainClass": "com.tech.inventory_service.InventoryServiceApplication",
+            "projectName": "inventory-service",
+            "vmArgs": "-Dserver.port=0",
+            "console": "integratedTerminal"
         },
         {
             "type": "java",
@@ -30,6 +49,20 @@
             "request": "launch",
             "mainClass": "com.tech.product_service.ProductServiceApplication",
             "projectName": "product-service"
+        },
+        {
+            "type": "java",
+            "name": "DiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.tech.discovery_server.DiscoveryServerApplication",
+            "projectName": "discovery-server"
+        }
+    ],
+        "compounds": [
+        {
+            "name": "Run Inventory Parallel",
+            "configurations": ["Inventory-Instance-1", "Inventory-Instance-2"],
+            "stopAll": true
         }
     ]
 }
